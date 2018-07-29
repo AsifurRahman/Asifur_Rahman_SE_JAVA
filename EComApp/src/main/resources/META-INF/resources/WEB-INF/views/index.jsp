@@ -19,9 +19,9 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1>
-                Max 5 Profitable Product
-            </h1>
+            <center><h3 style="color: #00a157">
+                <strong>Dashboard: Statistics of products</strong>
+            </h3></center>
         </section>
 
         <!-- Main content -->
@@ -35,9 +35,10 @@
                             <div class="dataTables_wrapper form-inline dt-bootstrap">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <center><h1>Total Sell:${sell}</h1></center>
+                                        <center><h1 style="color: orangered; size: A5"><strong>Total Sell:${sell}</strong></h1></center>
                                     </div>
                                     <div class="col-sm-12">
+                                        <center><h4 style="color:deepskyblue">Our Top 5 Profitable Products</h4></center>
                                         <table id="dashTable" class="table table-striped">
                                             <thead>
                                             <tr>

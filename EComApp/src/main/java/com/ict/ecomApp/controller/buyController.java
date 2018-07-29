@@ -1,4 +1,5 @@
 package com.ict.ecomApp.controller;
+
 import com.ict.ecomApp.EcomAppApplication;
 import com.ict.ecomApp.dao.ProductRepository;
 import com.ict.ecomApp.model.Product;
@@ -7,25 +8,25 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 import java.util.List;
 
 @Controller
-public class indexController {   //This is DashBoard Controller
+public class buyController {   //This is Buy Controller
 
     @Autowired
     ProductRepository productRepository;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String index(Model model) {
-        System.out.println("---This  is Home page---");
+    @RequestMapping(value = "/buyProduct", method = RequestMethod.GET)
+    public String Buymethod(Model model) {
 
-        model.addAttribute("sell",EcomAppApplication.totsellcount);
+        EcomAppApplication.totsellcount++;    // I  had increment in each time a client buy an item. This is only Demo,
+
+        model.addAttribute("sell",EcomAppApplication.totsellcount);// I don't have any sell/buy method effectively. Only just retrieved the data.
 
         List<Product> maxprofitList=productRepository.findTop5ByOrderByPpDesc();   //find the only maximum five profitable List in Descending Order
 
         model.addAttribute("maxprofitList",maxprofitList);// Bind data into the FrontEnd
-
-        System.out.println(maxprofitList);    //Printing Back-End
 
         return "index";
     }

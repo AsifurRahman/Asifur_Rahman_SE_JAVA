@@ -18,7 +18,7 @@ public class ProductController {
     private ProductRepository productRepository;
 
     @RequestMapping(value = "/upsertProduct", method = RequestMethod.GET)
-    public String productEdit(Model model, @RequestParam(value ="productId", required=false) Integer productId) {
+    public String productInsert(Model model, @RequestParam(value ="productId", required=false) Integer productId) {
 
         System.out.println("----------Product  Creation Method---------");
 
@@ -34,7 +34,7 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/upsertProduct", method = RequestMethod.POST)
-    public String productUpdatePost(Model model, @ModelAttribute("product") Product product, HttpServletRequest request) {
+    public String productInsertPost(Model model, @ModelAttribute("product") Product product, HttpServletRequest request) {
         System.out.println("-----------product Save Post/Backend-------------");
         System.out.println(product);
         try{

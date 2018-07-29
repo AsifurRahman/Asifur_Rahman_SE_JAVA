@@ -19,9 +19,9 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1>
-                Product's List
-            </h1>
+            <center><h3 style="color: deepskyblue">
+                <strong>Our Products </strong>
+            </h3></center>
         </section>
 
         <!-- Main content -->
@@ -44,6 +44,7 @@
                                                 <th>Price</th>
                                                 <th>Update Product</th>
                                                 <th>Delete Product</th>
+                                                <th>Buy</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -58,6 +59,9 @@
                                                     </td>
                                                     <td>
                                                     <a class="btn btn-danger btn-sm" href="./deleteProduct?productId=${pdr.id}">Delete</a>
+                                                    </td>
+                                                    <td>
+                                                        <a class="btn btn-success btn-sm" href="/buyProduct">Buy</a>
                                                     </td>
                                                 </tr>
                                             </c:forEach>

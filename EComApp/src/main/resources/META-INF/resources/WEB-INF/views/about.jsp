@@ -26,7 +26,8 @@
 <nav class="navbar navbar-light bg-light position-static-top">
     <div class="container">
         <%--<a class="btn btn-outline-danger" href="/brequest">Request for Blood</a>--%>
-        <a class="btn btn-primary" href="/register">Register New Member</a>
+        <a class="btn btn-warning" href="/register">Register New Member</a>
+        <a class="btn btn-danger" href="/login">Sign In</a>
     </div>
 </nav>
 
