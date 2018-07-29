@@ -20,7 +20,7 @@ public class registerController {
     }
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String registerView(Model model, @ModelAttribute()User user) {
-        System.out.println("---This  is Register page Backend---");
+        System.out.println("---This  is Register page Post/Backend---");
         user.setRole("ROLE_USER");
         userRepository.save(user);
         System.out.println("Successfully got the  object");

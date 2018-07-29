@@ -22,7 +22,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/iCheck/**").permitAll()
                 .antMatchers("/fonts/**").permitAll()
                 .antMatchers("/register").permitAll()
-                .antMatchers("/brequest").permitAll()
+                .antMatchers("/about").permitAll()
                 .antMatchers("/admin/preAuthorized/**").permitAll()
                 .antMatchers("/**").access("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
                 .and()

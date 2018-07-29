@@ -57,7 +57,7 @@
 
                                 <div class="form-group">
                                     <label>Price*</label>
-                                    <form:input path="price" class="form-control" placeholder="Enter Price of the product..."/>
+                                    <form:input path="price" class="form-control" required="true" placeholder="Enter Price of the product..."/>
                                 </div>
 
                             </div>
@@ -80,7 +80,7 @@
     <%@ include file="/WEB-INF/views/footer.jsp" %>
 
     <!-- Control Sidebar -->
-    <%@ include file="/WEB-INF/views/settings.jsp" %>
+    <%--<%@ include file="/WEB-INF/views/settings.jsp" %>--%>
     <!-- /.control-sidebar -->
     <!-- Add the sidebar's background. This div must be placed
          immediately after the control sidebar -->

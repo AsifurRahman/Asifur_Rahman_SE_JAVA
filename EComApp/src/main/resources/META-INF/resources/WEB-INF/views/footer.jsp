@@ -7,5 +7,5 @@
     <div class="pull-right hidden-xs">
         <b>Version 2.0</b>
     </div>
-    <strong>Copyright &copy; 2018 <a href="https://mbstu.ac.bd">ICT MBSTU</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2018 <a href="https://github.com/AsifurRahman"> AR_ASIF<SUP>TM</SUP></a>.</strong> All rights reserved.
 </footer>

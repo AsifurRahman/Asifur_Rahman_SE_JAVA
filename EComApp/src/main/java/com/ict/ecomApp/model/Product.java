@@ -19,20 +19,26 @@ public class Product {
     @Column(name = "Price")
     private String price;
 
-    @Column(name = "Profit_P")
-    private String prof_per;
-
     @Column(name = "Product_Type")
     private String ptype;
+
+    @Column(name = "p_percent")
+    private int pp;
 
     public Product() {
     }
 
-    public Product(String name, String price, String prof_per, String ptype) {
+    public Product(String name, String price, String ptype) {
         this.name = name;
         this.price = price;
-        this.prof_per = prof_per;
         this.ptype = ptype;
+    }
+
+    public Product(String name, String price, String ptype, int pp) {
+        this.name = name;
+        this.price = price;
+        this.ptype = ptype;
+        this.pp = pp;
     }
 
     public int getId() {
@@ -59,13 +65,6 @@ public class Product {
         this.price = price;
     }
 
-    public String getProf_per() {
-        return prof_per;
-    }
-
-    public void setProf_per(String prof_per) {
-        this.prof_per = prof_per;
-    }
 
     public String getPtype() {
         return ptype;
@@ -75,14 +74,22 @@ public class Product {
         this.ptype = ptype;
     }
 
+    public int getPp() {
+        return pp;
+    }
+
+    public void setPp(int pp) {
+        this.pp = pp;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", price='" + price + '\'' +
-                ", prof_per='" + prof_per + '\'' +
                 ", ptype='" + ptype + '\'' +
+                ", pp=" + pp +
                 '}';
     }
 }

@@ -1,6 +1,10 @@
 package com.ict.ecomApp.model;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="user")
@@ -8,9 +12,15 @@ public class User {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(insertable=false,updatable=false)
     private Integer id;
+
+    @NotEmpty
     private String username;
+
+    @NotEmpty
     private String password;
 
+    @NotNull
+    @Email
     private String email;
 
     private boolean enabled;

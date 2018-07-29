@@ -21,11 +21,11 @@ public class userController {
     @RequestMapping(value = "/upsertUser", method = RequestMethod.GET)
     public String userEdit(Model model, @RequestParam(value ="userId", required=false) Integer userId) {
         System.out.println("----------UserEdit---------");
-        if(userId== null){
+        if(userId== null){          //if user is not present already
             User user = new User();
             model.addAttribute("user", user);
         }
-        else{
+        else{                      // user is present, so  update user.
             User user = userRepository.getUserById(userId);
             model.addAttribute("user", user);
         }
@@ -34,8 +34,8 @@ public class userController {
 
     @RequestMapping(value = "/upsertUser", method = RequestMethod.POST)
     public String userUpdatePost(Model model, @ModelAttribute("user") User user, HttpServletRequest request) {
-        System.out.println("-----------userPost-------------");
-        System.out.println(user);
+        System.out.println("-----------userPost Method-------------");
+        System.out.println(user);        //print user into the console
         try{
             userRepository.save(user);
             request.setAttribute("message", "Edited successfully");
@@ -47,6 +47,7 @@ public class userController {
 
     @RequestMapping(value = "/deleteUser", method = RequestMethod.GET)
     public String deleteUser(Model model, @RequestParam(value="userId", required=false) Integer userId) {
+
         System.out.println("-----------delete-------------userId:"+userId);
         User user = userRepository.getUserById(userId);
         userRepository.delete(user);
@@ -56,7 +57,7 @@ public class userController {
     @RequestMapping(value = "/userList", method = RequestMethod.GET)
     public String userListView(Model model) {
         System.out.println("-----------userListView-------------");
-        List<User> userList=userRepository.findAll();
+        List<User> userList=userRepository.findAll();    //take the total user list
         model.addAttribute("userList",userList);
         return "userList";
     }

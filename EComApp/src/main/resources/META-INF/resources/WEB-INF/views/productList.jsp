@@ -81,7 +81,7 @@
     <%@ include file="/WEB-INF/views/footer.jsp" %>
 
     <!-- Control Sidebar -->
-    <%@ include file="/WEB-INF/views/settings.jsp" %>
+    <%--<%@ include file="/WEB-INF/views/settings.jsp" %>--%>
     <!-- /.control-sidebar -->
     <!-- Add the sidebar's background. This div must be placed
          immediately after the control sidebar -->

@@ -19,12 +19,14 @@ public class ProductController {
 
     @RequestMapping(value = "/upsertProduct", method = RequestMethod.GET)
     public String productEdit(Model model, @RequestParam(value ="productId", required=false) Integer productId) {
-        System.out.println("----------ProductEdit---------");
-        if(productId== null){
+
+        System.out.println("----------Product  Creation Method---------");
+
+        if(productId== null){         //Product Insertion
             Product product = new Product();
             model.addAttribute("product", product);
         }
-        else {
+        else {    //Product Update
             Product product = productRepository.getProductById(productId);
             model.addAttribute("product", product);
         }
@@ -33,10 +35,10 @@ public class ProductController {
 
     @RequestMapping(value = "/upsertProduct", method = RequestMethod.POST)
     public String productUpdatePost(Model model, @ModelAttribute("product") Product product, HttpServletRequest request) {
-        System.out.println("-----------productPost-------------");
+        System.out.println("-----------product Save Post/Backend-------------");
         System.out.println(product);
         try{
-            productRepository.save(product);
+            productRepository.save(product);     //Saving the product
             request.setAttribute("message", "Edited successfully");
         }
         catch(Exception e){
@@ -56,7 +58,7 @@ public class ProductController {
     @RequestMapping(value = "/productList", method = RequestMethod.GET)
     public String productListView(Model model) {
         System.out.println("-----------productListView-------------");
-        List<Product> productList=productRepository.findAll();
+        List<Product> productList=productRepository.findAll();   //Finding all list from database
         model.addAttribute("productList",productList);
         return "productList";
     }
